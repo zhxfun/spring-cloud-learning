@@ -1,0 +1,36 @@
+---
+server:
+  #服务注册中心端口号
+  port: 7001
+eureka:
+  instance:
+    #服务注册中心实例的主机名
+      hostname: eureka7001
+  client:
+    #表示是否将自己注册在EurekaServer上，默认为true。由于当前应用就是EurekaServer，所以置为false
+    register-with-eureka: false
+    #表示表示是否从EurekaServer获取注册信息，默认为true。单节点不需要同步其他的EurekaServer节点的数据
+    fetch-registry: false
+    service-url:
+      #设置Eureka的地址
+      defaultZone: http://eureka7002:7002/eureka/
+spring:
+  profiles: eureka7001
+---
+server:
+  #服务注册中心端口号
+  port: 7002
+eureka:
+  instance:
+    #服务注册中心实例的主机名
+    hostname: eureka7002
+  client:
+    #表示是否将自己注册在EurekaServer上，默认为true。由于当前应用就是EurekaServer，所以置为false
+    register-with-eureka: false
+    #表示表示是否从EurekaServer获取注册信息，默认为true。单节点不需要同步其他的EurekaServer节点的数据
+    fetch-registry: false
+    service-url:
+      #设置Eureka的地址
+      defaultZone: http://eureka7001:7001/eureka/
+spring:
+  profiles: eureka7002
