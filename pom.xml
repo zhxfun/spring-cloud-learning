@@ -29,7 +29,7 @@
         <module>user-service</module>
         <module>stream-rabbitmq-producer</module>
         <module>stream-rabbitmq-consumer</module>
-        <module>config-server</module>
+        <module>config-learning</module>
     </modules>
     <!-- 子模块继承之后，提供作用：锁定版本+子模块不用写groupId和version  -->
     <dependencyManagement>
